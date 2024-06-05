@@ -17,3 +17,8 @@ app.listen(app.get('port'), function () {
 })
 
 // GET route naar index pagina
+app.get('/', function(req, res){
+    res.render('index', {
+    })
+    console.log('if you see this message the page loaded correctly')
+    });

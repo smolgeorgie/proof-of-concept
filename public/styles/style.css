@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100vh;
+}
+
+/* SMALL STYLING  */
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAV */
+
+header ul {
+    display: flex;
+    align-items: center;
+    height: 2em;
+    gap: 1.5em;
+}
+
+nav .user-action {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    height: 6em;
+    background-color: green;
+
+    input {
+        width: 25em;
+        height: 3.2em;
+        border-radius: 40px 40px 40px 10px;
+        border: none;
+    }
+
+    input::placeholder {
+        padding: 0 0 0 1em;
+        font-size: 16px;
+    }
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+header ul,
+nav .user-action,
+.navbar {
+    padding: 0 20em 0 20em;
+}
+
+/* MAIN */
+
+main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+        ". img img img ."
+        ". h1 h1 h1 ."
+        "filter ingredient bereiding bereiding ."
+        "filter ingredient bereiding bereiding ."
+        ". ingredient bereiding bereiding .";
+}
+
+main img {
+    grid-area: img;
+    background-color: red;
+}
+
+.title-info {
+    grid-area: h1;
+    background-color: pink;
+}
+
+.ingredienten-lijst {
+    grid-area: ingredient;
+    background-color: green;
+}
+
+.bereidingswijze {
+    grid-area: bereiding;
+    background-color: blue;
+}
+
+.snelfilter {
+    grid-area: filter;
+    background-color: yellow;
+}
