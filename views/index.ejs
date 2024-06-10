@@ -4,42 +4,46 @@
         <main>
 
             <img src="/Angusburger_met_gegrilde_groenten_en_pesto.webp">
-
-            <article class="title-info">
-                <h1> Angusburger met gegrilde groenten en pesto </h1>
-                <ul>
-                    <li> <a href="/">meuk</a></li>
-                    <li> <a href="/">meuk2</a></li>
-                    <li> <a href="/">meuk3</a></li>
-                </ul>
-            </article>
-
-            <section class="ingredienten-lijst">
-                <h3>Ingrediënten</h3>
-                <ul>
-                    <li> <a href="/">meuk</a></li>
-                    <li> <a href="/">meuk2</a></li>
-                    <li> <a href="/">meuk3</a></li>
-                </ul>
-                <button type="button">Verander ingrediënten</button>
-            </section>
-
-            <section class="bereidingswijze">
-                <h2>Bereidingswijze</h2>
-                <p>lorem ipsum enzo</p>
-                <article class="variatie-tip">
-                    <h3>Variatietip</h3>
-                    <p>lorem ipsum enzo</p>
+            <% recipes.forEach (recipe=> { %>
+                <article class="title-info">
+                    <h1>
+                        <%= recipe.title %>
+                    </h1>
+                    <ul>
+                        <li> <a href="/">Hoofdgerecht</a></li>
+                        <li> <a href="/">4 Pers.</a></li>
+                        <li> <a href="/">Ca. 30 min</a></li>
+                    </ul>
                 </article>
-            </section>
 
-            <section class="snelfilter">
-                <h3>Snelfilter</h3>
-                <ul>
-                    <li> <a href="/">meuk</a></li>
-                    <li> <a href="/">meuk2</a></li>
-                    <li> <a href="/">meuk3</a></li>
-                </ul>
-            </section>
+                <section class="ingredienten-lijst">
+                    <h3>Ingrediënten</h3>
+                    <ul>
+                        <li> <a href="/">meuk</a></li>
+                        <li> <a href="/">meuk2</a></li>
+                        <li> <a href="/">meuk3</a></li>
+                    </ul>
+                    <button type="button">Verander ingrediënten</button>
+                </section>
+
+                <section class="bereidingswijze">
+                    <h2>Bereidingswijze</h2>
+                    <p>lorem ipsum enzo</p>
+                    <article class="variatie-tip">
+                        <h3>Variatietip</h3>
+                        <p>lorem ipsum enzo</p>
+                    </article>
+                </section>
+                <% }) %>
+
+
+                    <section class="snelfilter">
+                        <h3>Snelfilter</h3>
+                        <ul>
+                            <li> <a href="/">meuk</a></li>
+                            <li> <a href="/">meuk2</a></li>
+                            <li> <a href="/">meuk3</a></li>
+                        </ul>
+                    </section>
 
         </main>
