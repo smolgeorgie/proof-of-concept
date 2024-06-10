@@ -69,7 +69,7 @@ nav .user-action,
 main {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: 2fr 1fr 2fr 2fr 2fr;
     grid-template-areas:
         ". img img img ."
         ". h1 h1 h1 ."
