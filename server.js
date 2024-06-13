@@ -19,13 +19,31 @@ app.use(express.static('public'))
 // Zorg dat werken met request data makkelijker wordt 
 app.use(express.urlencoded({extended: true}))
 
+// Maak een GET route voor de index (index.ejs)
+app.get('/', function(request, response) {
+    // Haal gegevens van alle endpoints uit de directus API op
+    Promise.all([
+        fetchJson(apiUrl + 'plus_box'),
+        fetchJson(apiUrl + 'plus_recipes')
+    ]).then(([boxData, recipeData]) => {
+        // console.log(recipeData)
+
+        // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele
+        response.render('index', {
+            box: boxData.data,
+            recipes: recipeData.data
+        })
+    })
+})
+
 
 // Maak een GET route voor de detailpagina (recipe.ejs)
 app.get('/recipe/:id', function(request, response) {
     // const recipeId = request.params.id
     // Haal gegevens van alle endpoints uit de directus API op
+    
     Promise.all([
-        fetchJson(apiUrl + 'plus_recipes/' + request.params.id),
+        fetchJson(apiUrl + 'plus_recipes/2'),
         fetchJson(apiUrl + 'plus_ingredients')
     ]).then(([recipeData, ingredientData]) => {
         console.log(recipeData)

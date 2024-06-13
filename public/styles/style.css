@@ -133,18 +133,103 @@ main img {
     margin-bottom: 2em;
 }
 
-.ingredienten-lijst button {
+.ingredienten-lijst a {
+    display: grid;
+    place-items: center;
     height: 3em;
     width: 15em;
     font-size: var(--text-fontsize);
     color: white;
     background-color: #88C012;
     border-radius: 35px 40px 40px 10px;
-    border: none;
     cursor: pointer;
     margin: auto;
 }
 
+
+/* POPOVER */
+
+.popover {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.popover-inner {
+    background-color: white;
+    padding: 32px 16px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    width: 20em;
+    height: 35em;
+
+    h2 {
+        margin: .5em 0 1em 0;
+    }
+
+    ul {
+        margin-top: 1em;
+
+
+        li {
+            margin-bottom: 1em;
+        }
+    }
+}
+
+.popover:target {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.list-item span {
+    cursor: pointer;
+}
+
+.change-icons {
+    right: 10px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.list-item:hover .change-icons {
+    opacity: 1;
+    visibility: visible;
+    animation: slideRight 1s ease 0s 1 normal none;
+}
+
+
+/* BEREIDINGSWIJZE */
 .bereidingswijze {
     margin-left: 3em;
     margin-top: 1em;
@@ -177,6 +262,9 @@ main img {
         padding: 0 0 1em 0;
     }
 }
+
+
+/* FILTER */
 
 .snelfilter {
     grid-area: filter;
