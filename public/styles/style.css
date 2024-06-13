@@ -91,50 +91,58 @@ main {
 
 main img {
     grid-area: img;
-    background-color: red;
+    object-fit: cover;
 }
 
 .title-info {
     grid-area: h1;
-    background-color: pink;
+    margin-top: 1em;
+
+    ul {
+        margin-top: .5em;
+    }
+}
+
+.ingredienten-container {
+    grid-area: ingredient;
+    background-color: transparent;
 }
 
 .ingredienten-lijst {
     display: flex;
     flex-direction: column;
+    overflow: auto;
     padding: 1em 1em 1em 1em;
-    height: 80%;
     border-radius: 10px;
-    grid-area: ingredient;
     margin-right: 3em;
     margin-top: 1em;
     background-color: var(--section-backgroundcolor);
+}
 
-    h3 {
-        margin-top: 1em;
-        font-size: var(--section-fontsize);
-        color: var(--text-color);
-    }
+.ingredienten-lijst h3 {
+    margin-top: 1em;
+    font-size: var(--section-fontsize);
+    color: var(--text-color);
+}
 
-    ul {
-        font-size: var(--text-fontsize);
-        color: var(--text-color);
-        margin-top: 1em;
-        flex-grow: 1;
-        margin-bottom: auto;
-    }
+.ingredienten-lijst ul {
+    font-size: var(--text-fontsize);
+    color: var(--text-color);
+    margin-top: 1em;
+    flex-grow: 1;
+    margin-bottom: 2em;
+}
 
-    button {
-        height: 3em;
-        width: 15em;
-        font-size: var(--text-fontsize);
-        color: white;
-        background-color: #88C012;
-        border-radius: 35px 40px 40px 10px;
-        border: none;
-        cursor: pointer;
-        margin: auto;
-    }
+.ingredienten-lijst button {
+    height: 3em;
+    width: 15em;
+    font-size: var(--text-fontsize);
+    color: white;
+    background-color: #88C012;
+    border-radius: 35px 40px 40px 10px;
+    border: none;
+    cursor: pointer;
+    margin: auto;
 }
 
 .bereidingswijze {
@@ -148,10 +156,32 @@ main img {
         margin-top: 1em;
     }
 
+    p {
+        margin-top: 1em;
+    }
+}
+
+.variatie-tip {
+    margin-top: 2em;
+    background-color: lightgreen;
+    padding: 1em;
+    border-radius: 10px;
+
+    h3 {
+        font-size: var(--section-fontsize);
+        color: var(--text-color);
+        padding: 1em 0 .5em 0;
+    }
+
+    p {
+        padding: 0 0 1em 0;
+    }
 }
 
 .snelfilter {
-    margin-top: 1em;
     grid-area: filter;
     background-color: yellow;
+    width: 70%;
+    margin: 1em 0 0 2em;
+    border-radius: 10px;
 }
